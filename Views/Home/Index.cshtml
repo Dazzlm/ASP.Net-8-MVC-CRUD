@@ -1,0 +1,38 @@
+﻿@model CRUD.Models.HomeViewModel;
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="row row-cols-1 row-cols-md-4 g-4 mt-1">
+    @if (Model.Empleados.Count() > 0)
+    {
+        @foreach (var item in Model.Empleados)
+        {
+            <div class="col">
+                <div class="Tarjeta h-100">
+                    <div class="text-center ">
+                        <img src=@item.RutaImagen style="height:200px; max-width:250px; margin:10px; border-radius:10px" class="text-center" alt=@item.Nombre />
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"> @item.Nombre</h4>
+                        <p class="card-text "> Titulo: @item.Titulo</p>
+                        <p class="card-text "> Edad: @item.Edad </p>
+                    </div>
+                    <div class="card-footer text-center ">
+                        <a asp-controller="Empleado" asp-action="Detalles" asp-route-id="@item.ID" class="btn btn-primary "><i class="fa-solid fa-circle-info"></i> Detalles </a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <h3>No hay Empleados</h3>
+    }
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

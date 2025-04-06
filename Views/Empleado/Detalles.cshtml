@@ -1,0 +1,78 @@
+﻿@model CRUD.Data.Entidades.Empleado;
+@{
+    ViewData["Title"] = "Detalles";
+}
+<h4>Empleado</h4>
+<hr />
+
+<dl class="row">
+    
+    <dd >
+    <div class="text-left zoom">
+        <img src=@Model.RutaImagen style="height:350px; max-width:400px; border-radius:10px" class="text-left" alt=@Model.Nombre />
+    </div>
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Documento)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Documento)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Nombre)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Nombre)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Edad)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Edad)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Correo)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Correo)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Telefono)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Telefono)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Titulo)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Titulo)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.FechaNacimiento)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.FechaNacimiento)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Salario)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Salario)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.IsActivo)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.IsActivo )
+    </dd>
+</dl>
+
+<a asp-action="Editar" asp-route-id="@Model.ID" class="btn btn-warning "><i class="fa-solid fa-pen-to-square"></i> Editar </a>
+<a asp-controller="Home" asp-action="index" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Regresar </a>
+
+
+    
+    
+
+

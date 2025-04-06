@@ -1,0 +1,75 @@
+﻿@model CRUD.Models.EmpleadoViewModel;
+@{
+    ViewData["Title"] = "Crear";
+}
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+       
+        <h2>Crear Empleado</h2>
+        <form asp-action="Crear" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="DireccionImagen" />
+            <input type="hidden" asp-for="ID" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label>Documento</label>
+                <input class="form-control" asp-for="Documento" type="text" />
+                <span asp-validation-for="Documento" class="text-danger"></span>
+            </div>
+            <div class ="mb-3">
+                <label>Nombre</label>
+                <input class="form-control" asp-for="Nombre" type="text"/>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label>Correo</label>
+                <input class="form-control" asp-for="Correo" type="text"/>
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label>Telefono</label>
+                <input class="form-control" asp-for="Telefono" type="text" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label>Titulo</label>
+                <input class="form-control" asp-for="Titulo" type="text" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+           <div class="mb-3">
+                <label>Fecha de Nacimiento</label>
+                <input class="form-control" asp-for="FechaNacimiento" type="date" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label>Fecha de Contratacion</label>
+                <input class="form-control" asp-for="FechaContrato" type="date" />
+                <span asp-validation-for="FechaContrato" class="text-danger"></span>
+            </div>
+           <div class="mb-3">
+                <label>Salario</label>
+                <input class="form-control" asp-for="Salario" type="text"/>
+                <span asp-validation-for="Salario" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label>Elige una imagen</label>
+                <input class="form-control" asp-for="RutaImagen" type="file" accept="image/*" />
+                <span asp-validation-for="RutaImagen" class="text-danger"></span>
+            </div>
+           <div class="mb-3">
+                <input class="form-check-input" asp-for="IsActivo" type="checkbox" id="CBActivo" />
+                <label class="form-check-label" for="CBActivo">Estado</label>
+           </div>
+            <div class="mb-3">
+                <button class="btn btn-success" type="submit"><i class="fa-solid fa-user-plus"></i> Crear </button>
+                <a asp-action="index" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i> Regresar </a>
+            </div>
+
+        </form>
+       
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
